@@ -31,6 +31,7 @@ end
 theta=modp(k*(k-1),n);
 Ms=ones(k,n);
 
+%theta>=n/2
 if theta>=n/2
     for i = 1:1:k-a+1
         for j=i:1:i+k-2
@@ -53,7 +54,7 @@ if theta>=n/2
             Ms(i,j)=0;
         end
     end
-else
+else %theta<n/2
     for i = 1:1:k-a+2
         for j=i:1:i+k-2
             Ms(i,j)=0;
@@ -80,12 +81,12 @@ end
 tmp_vector=k-sum(Ms);
 count_first_a=size(find(tmp_vector(1:k/2)==a),2)+size(find(tmp_vector(k:n)==a),2);
 count_first_b=size(find(tmp_vector(1:k/2)==b),2)+size(find(tmp_vector(k:n)==b),2);
-
+%if theta>=n/2
 if theta>=n/2
     count_IV_a=size(find(tmp_vector(2*k-a:n)==a),2);
     count_IV_b=size(find(tmp_vector(2*k-a:n)==b),2);
     flag=0;
-% mu-----------------------------------------------------------------------------------------------------------------------------------
+% Step3(move the extra zeros in column [k+a-t+1,2k-a-1] to column [2k-a,n])-----------------------------------------------------------------------------------------------------------------------------------
     flag_a=a;
     flag_b=b;    
     
@@ -124,7 +125,7 @@ if theta>=n/2
             break;
         end
     end
-    %delta
+    %Step3(move the extra zeros in column [k,k+a-t] to column [2k-a,n])
     %-----------------------------------------------------------------------------------------------------------------------------------------
     if flag==0
         flag_a=b;
@@ -166,7 +167,7 @@ if theta>=n/2
             end
         end
     end
-    %I
+    %Step3(if the columns in [2k-a,n] still miss zeros, take zeros from columns in [a-k/2-1])
 %--------------------------------------------------------------------------------------------------------------------------
     if flag==0
         flag_a=b;
@@ -210,7 +211,7 @@ if theta>=n/2
     end
     
     %---------------------------------------------------------------------------------------------------------------------------
-    %final
+    %Step5(ajust the positions of zerosin column [k/2+1,k+a-t] until the matrix is balanced.)
     
     flag=0;
     count_a=size(find(tmp_vector(1:n)==a),2);
@@ -260,7 +261,7 @@ else
     count_IV_b=size(find(tmp_vector(2*k-a+1:n)==b),2);
     flag=0;
     
-%mu
+%Step6(move the extra zeros in column [k+a-t,2k-a] to column [2k-a+1,n])
 %-------------------------------------------------------------------------------------------------------------------------------------------------
     flag_a=a;
     flag_b=b;
@@ -302,7 +303,7 @@ else
     end
 
 %-------------------------------------------------------------------------------------------------------------------------------
-%delta
+%Step6(move the extra zeros in column [k,k+a-t-1] to column [2k-a+1,n])
     if flag==0
         flag_a=b;
         flag_b=b;
@@ -343,8 +344,8 @@ else
             end
         end
     end
-
-% final-------------------------------------------------------------------------------------------------------
+%Step8(ajust the positions of zerosin column [k/2+1,k+a-t-1] until the matrix is balanced.)
+%-------------------------------------------------------------------------------------------------------
     flag=0;
     count_a=size(find(tmp_vector(1:n)==a),2);
     count_b=size(find(tmp_vector(1:n)==b),2);
