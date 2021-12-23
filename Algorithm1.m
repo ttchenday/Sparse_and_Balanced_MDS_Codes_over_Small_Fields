@@ -104,9 +104,9 @@ end
 
 %--------------------------------------------------------------
 tmp_vector=k-sum(Ms);
-for i=k/2+1:1:k
-    for j1=k/2+m:1:k-3*m
-        for j2=k-2*m+1:1:3*k/2-4*m-1
+for j1=k/2+m:1:k-3*m
+    for j2=k-2*m+1:1:3*k/2-4*m-1
+        for i=k/2+1:1:k
             if tmp_vector(j1)<(k+2*m)/2 && tmp_vector(j2)>(k+2*m)/2
                 if Ms(i,j1)==1 && Ms(i,j2)==0
                     Ms(i,j1)=0;
