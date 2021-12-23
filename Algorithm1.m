@@ -3,7 +3,7 @@ clc;
 % alg1
 disp('Please Input an Even Integer >= 46:');
 k=input('k=');
-tmp=floor((sqrt((8*k)+1)-1)/2);
+tmp=floor((sqrt((8*k)+1)-1)/8);
 out_tmp=['Please Input an Intergetr < ',num2str(tmp)];
 disp(out_tmp);
 m=input('m=');
