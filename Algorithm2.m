@@ -3,19 +3,22 @@ clc;
 % alg1
 disp('Please Input an Even Integer >= 46:');
 k=input('k=');
-tmp=floor((sqrt((8*k)+1)-1)/2);
-out_tmp=['Please Input an Intergetr < ',num2str(tmp)];
+tmp1=floor((sqrt((8*k)+1)+1)/2);
+tmp2=floor(k-sqrt(k));
+out_tmp=['Please Input an Intergetr < ',num2str(tmp1),'> ',num2str(tmp2)];
 disp(out_tmp);
 t=input('t=');
 while(k<46 || t>tmp)
     disp('Your Input Is Invalid!')
     disp('Please Input an Even Integer >=46:');
     k=input('k=');
-    tmp=floor((sqrt((8*k)+1)-1)/2);
-    out_tmp=['Please Input an Intergetr < ',num2str(tmp)];
+    tmp1=floor((sqrt((8*k)+1)+1)/2);
+    tmp2=floor(k-sqrt(k));
+    out_tmp=['Please Input an Intergetr < ',num2str(tmp1),'> ',num2str(tmp2)];
     disp(out_tmp);
     t=input('t=');
 end
+
 
 %--------------------------------------------------------------
 %Initialization
@@ -86,9 +89,9 @@ if theta>=n/2
     count_IV_a=size(find(tmp_vector(2*k-a:n)==a),2);
     count_IV_b=size(find(tmp_vector(2*k-a:n)==b),2);
     flag=0;
-% Step3(move the extra zeros in column [k+a-t+1,2k-a-1] to column [2k-a,n])-----------------------------------------------------------------------------------------------------------------------------------
+    % Step3(move the extra zeros in column [k+a-t+1,2k-a-1] to column [2k-a,n])-----------------------------------------------------------------------------------------------------------------------------------
     flag_a=a;
-    flag_b=b;    
+    flag_b=b;
     
     for j2=n:-1:2*k-a
         for j1=2*k-a-1:-1:k+a-t+1
@@ -129,7 +132,7 @@ if theta>=n/2
     %-----------------------------------------------------------------------------------------------------------------------------------------
     if flag==0
         flag_a=b;
-        flag_b=b;     
+        flag_b=b;
         
         for j2=n:-1:2*k-a
             for j1=k:1:k+a-t
@@ -168,7 +171,7 @@ if theta>=n/2
         end
     end
     %Step3(if the columns in [2k-a,n] still miss zeros, take zeros from columns in [a-k/2-1])
-%--------------------------------------------------------------------------------------------------------------------------
+    %--------------------------------------------------------------------------------------------------------------------------
     if flag==0
         flag_a=b;
         flag_b=b;
@@ -252,7 +255,7 @@ if theta>=n/2
             break;
         end
     end
-        
+    
 else
     %--------------------------------------------------------------------------------------------------------------------------------
     %theta<n/2;
@@ -261,8 +264,8 @@ else
     count_IV_b=size(find(tmp_vector(2*k-a+1:n)==b),2);
     flag=0;
     
-%Step6(move the extra zeros in column [k+a-t,2k-a] to column [2k-a+1,n])
-%-------------------------------------------------------------------------------------------------------------------------------------------------
+    %Step6(move the extra zeros in column [k+a-t,2k-a] to column [2k-a+1,n])
+    %-------------------------------------------------------------------------------------------------------------------------------------------------
     flag_a=a;
     flag_b=b;
     
@@ -301,9 +304,9 @@ else
             break;
         end
     end
-
-%-------------------------------------------------------------------------------------------------------------------------------
-%Step6(move the extra zeros in column [k,k+a-t-1] to column [2k-a+1,n])
+    
+    %-------------------------------------------------------------------------------------------------------------------------------
+    %Step6(move the extra zeros in column [k,k+a-t-1] to column [2k-a+1,n])
     if flag==0
         flag_a=b;
         flag_b=b;
@@ -344,8 +347,8 @@ else
             end
         end
     end
-%Step8(ajust the positions of zerosin column [k/2+1,k+a-t-1] until the matrix is balanced.)
-%-------------------------------------------------------------------------------------------------------
+    %Step8(ajust the positions of zerosin column [k/2+1,k+a-t-1] until the matrix is balanced.)
+    %-------------------------------------------------------------------------------------------------------
     flag=0;
     count_a=size(find(tmp_vector(1:n)==a),2);
     count_b=size(find(tmp_vector(1:n)==b),2);
