@@ -19,7 +19,6 @@ while(k<46 || t>tmp)
     t=input('t=');
 end
 
-
 %--------------------------------------------------------------
 %Initialization
 n=2*k-t;
@@ -304,6 +303,55 @@ else
             break;
         end
     end
+    %mu'
+    %-------------------------------------------------------------------------------------------------------------------------------
+    find(tmp_vector==a);
+    find(tmp_vector==b);
+    
+    count_sec_a=size(find(tmp_vector(k+a-t:2*k-a)==a),2);
+    count_sec_b=size(find(tmp_vector(k+a-t:2*k-a)==b),2);
+    if flag==1
+        flag1=0;
+        flag_a=a;
+        flag_b=a;
+        for j1=k+a-t:1:2*k-a
+            for j2=k/2-2:-1:1
+                for i=k/2:-1:k-a+3
+                    if count_sec_a+count_sec_b<k-2*a+t+1 || count_first_b==n-theta+1
+                        if count_first_a>=theta
+                            flag_a=b;
+                            flag_b=b;
+                        end
+                        if count_first_b>=n-theta
+                            flag_b=a;
+                            flag_a=a;
+                        end
+                        if tmp_vector(j1)>flag_a && tmp_vector(j2)<flag_b && Ms(i,j1)==0 && Ms(i,j2)==1
+                            Ms(i,j1)=1;
+                            Ms(i,j2)=0;
+                            tmp_vector(j1)=tmp_vector(j1)-1;
+                            tmp_vector(j2)=tmp_vector(j2)+1;
+                            count_sec_a=size(find(tmp_vector(k+a-t:2*k-a)==a),2);
+                            count_sec_b=size(find(tmp_vector(k+a-t:2*k-a)==b),2);
+                            count_first_a=size(find(tmp_vector(1:k/2)==a),2)+size(find(tmp_vector(k:n)==a),2);
+                            count_first_b=size(find(tmp_vector(1:k/2)==b),2)+size(find(tmp_vector(k:n)==b),2);
+                        end
+                    else
+                        flag1=1;
+                        %                         disp("363");
+                        break;
+                    end
+                end
+                if flag1==1
+                    break;
+                end
+            end
+            if flag1==1
+                break;
+            end
+        end
+    end
+    %     disp("step mu+");
     
     %-------------------------------------------------------------------------------------------------------------------------------
     %Step6(move the extra zeros in column [k,k+a-t-1] to column [2k-a+1,n])
