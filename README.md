@@ -10,11 +10,13 @@ Input: Integers $k,m$ with $1\leq m< \frac{\sqrt{8k+1}-1}{8}$and $k$ is even;
 Output: A sparse, good and balanced binary $k \times n$ matrix $M_{\mathcal{S}}$.
 
 **Algorithm2**
+
 Input: Integers $k,t$ with $t\in[\lceil\frac{1+\sqrt{8k+1}}{2}\rceil,\lfloor k-\sqrt{k}\rfloor]$ and $k$ is even;
 
 Output: A sparse, good and balanced binary $k \times n$ matrix $M_{\mathcal{S}}$.
 
 **Algorithm3**
+
 Input: Integers $k,u$ with $2\leq u\leq \lfloor \sqrt{k}\rfloor$ and $k$;
 
 Output: A sparse, good and balanced binary $k \times n$ matrix $M_{\mathcal{S}}$.
