@@ -3,7 +3,11 @@ clear all
 % alg3
 disp('Please Input an Even Integer:');
 k=input('k=');
-tmp=floor(sqrt(k));
+if sqrt(k)==fix(sqrt(k))
+    tmp=floor(sqrt(k))-1;
+else
+    tmp=floor(sqrt(k));
+end
 out_tmp=['Please Input an Integer u Between 2 and ',num2str(tmp)];
 disp(out_tmp);
 u=input('u=');
@@ -11,7 +15,11 @@ while(u<2||u>tmp)
     disp('Your Input Is Invalid!')
     disp('Please Input an Even Integer >= 46:');
     k=input('k=');
-    tmp=floor(sqrt(k));
+    if sqrt(k)==fix(sqrt(k))
+        tmp=floor(sqrt(k))-1;
+    else
+        tmp=floor(sqrt(k));
+    end
     out_tmp=['Please input an integer u between 2 and ',num2str(tmp)];
     disp(out_tmp);
     u=input('u=');
