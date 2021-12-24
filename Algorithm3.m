@@ -1,6 +1,6 @@
 clc
 clear all
-% alg2
+% alg3
 disp('Please Input an Even Integer:');
 k=input('k=');
 tmp=floor(sqrt(k));
