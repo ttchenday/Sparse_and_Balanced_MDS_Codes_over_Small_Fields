@@ -338,7 +338,6 @@ else
                         end
                     else
                         flag1=1;
-                        %                         disp("363");
                         break;
                     end
                 end
@@ -351,7 +350,6 @@ else
             end
         end
     end
-    %     disp("step mu+");
     
     %-------------------------------------------------------------------------------------------------------------------------------
     %Step6(move the extra zeros in column [k,k+a-t-1] to column [2k-a+1,n])
