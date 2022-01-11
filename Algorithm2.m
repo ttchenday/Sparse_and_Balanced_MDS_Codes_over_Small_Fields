@@ -1,7 +1,7 @@
 clear all;
 clc;
 % alg1
-disp('Please Input an Even Integer >= 46:');
+disp('Please Input an Even Integer >= 4:');
 k=input('k=');
 tmp1=ceil((sqrt((8*k)+1)+1)/2);
 tmp2=floor(k-sqrt(k));
