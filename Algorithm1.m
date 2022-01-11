@@ -7,7 +7,7 @@ tmp=(sqrt((8*k)+1)-1)/8;
 out_tmp=['Please Input an Intergetr < ',num2str(tmp)];
 disp(out_tmp);
 m=input('m=');
-while(k<46 || m>tmp)
+while(k>=4 || m>tmp)
     disp('Your Input Is Invalid!')
     disp('Please Input an Even Integer >=46:');
     k=input('k=');
