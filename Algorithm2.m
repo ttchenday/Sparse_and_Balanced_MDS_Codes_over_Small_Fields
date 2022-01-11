@@ -3,16 +3,16 @@ clc;
 % alg1
 disp('Please Input an Even Integer >= 46:');
 k=input('k=');
-tmp1=floor((sqrt((8*k)+1)+1)/2);
+tmp1=ceil((sqrt((8*k)+1)+1)/2);
 tmp2=floor(k-sqrt(k));
 out_tmp=['Please Input an Intergetr < ',num2str(tmp1),'> ',num2str(tmp2)];
 disp(out_tmp);
 t=input('t=');
 while(k>=4 || t>tmp)
     disp('Your Input Is Invalid!')
-    disp('Please Input an Even Integer >=46:');
+    disp('Please Input an Even Integer >=4:');
     k=input('k=');
-    tmp1=floor((sqrt((8*k)+1)+1)/2);
+    tmp1=ceil((sqrt((8*k)+1)+1)/2);
     tmp2=floor(k-sqrt(k));
     out_tmp=['Please Input an Intergetr < ',num2str(tmp1),'> ',num2str(tmp2)];
     disp(out_tmp);
