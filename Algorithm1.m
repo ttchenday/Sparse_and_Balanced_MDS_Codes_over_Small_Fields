@@ -1,7 +1,7 @@
 clear all;
 clc;
 % alg1
-disp('Please Input an Even Integer >= 46:');
+disp('Please Input an Even Integer >= 4:');
 k=input('k=');
 tmp=(sqrt((8*k)+1)-1)/8;
 out_tmp=['Please Input an Intergetr < ',num2str(tmp)];
