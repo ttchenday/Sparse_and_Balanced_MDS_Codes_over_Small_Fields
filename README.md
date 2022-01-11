@@ -20,3 +20,7 @@ Output: A sparse, good and balanced binary $k \times n$ matrix $M_{\mathcal{S}}$
 Input: Integers $k,u$ with $2\leq u\leq \lfloor \sqrt{k}\rfloor$ and $k$;
 
 Output: A sparse, good and balanced binary $k \times n$ matrix $M_{\mathcal{S}}$.
+
+**$k$ is odd**
+
+When $k$ is odd, the initial matrix $M_{\mathcal{S}}$ in Algorithm2 can be constructed as follows: if $\theta\geq \frac{n}{2}$, then for $i\in[k-a+1]$ and $j\in[i,i+k-2]$, $m_{i,j}=0$, for $i\in[k-a+2,\frac{k+1}{2}]$ and $j\in[i-(k-a+1)]\cup[i,2k-a-1]$, $m_{i,j}=0$, for $i\in[\frac{k+1}{2}+1,k],j\in[a-\frac{k-1}{2}-1+i-\frac{k+1}{2}]\cup[\frac{k+1}{2}+a-t+1+i-\frac{k+1}{2},n]$, $m_{i,j}=0$, and for all the rest positions, $m_{i,j}=1$; if $\theta<\frac{n}{2}$, then for $i\in[k-a+2]$ and $j\in[i,i+k-2]$, $m_{i,j}=0$, for $i\in[k-a+3,\frac{k+1}{2}]$ and $j\in[i-(k-a+2)]\cup[i,2k-a]$, $m_{i,j}=0$,  for $i\in[\frac{k+1}{2}+1,k],j\in[a-\frac{k-1}{2}-2+i-\frac{k+1}{2}]\cup[\frac{k+1}{2}+a-t+i-\frac{k+1}{2},n]$, $m_{i,j}=0$, and for all the rest positions, $m_{i,j}=1$.
