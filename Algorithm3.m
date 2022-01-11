@@ -1,7 +1,7 @@
 clc
 clear all
 % alg3
-disp('Please Input an Even Integer:');
+disp('Please Input an Even Integer >= 4:');
 k=input('k=');
 if sqrt(k)==fix(sqrt(k))
     tmp=floor(sqrt(k))-1;
@@ -13,7 +13,7 @@ disp(out_tmp);
 u=input('u=');
 while(u<2||u>tmp)
     disp('Your Input Is Invalid!')
-    disp('Please Input an Even Integer >= 46:');
+    disp('Please Input an Even Integer >= 4:');
     k=input('k=');
     if sqrt(k)==fix(sqrt(k))
         tmp=floor(sqrt(k))-1;
