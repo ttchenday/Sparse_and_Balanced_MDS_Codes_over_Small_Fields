@@ -95,7 +95,7 @@ for i = tmp_vector
 end
 if(flag==0)
     disp('Output Matrix is :')
-    disp(tmp_vector);
+    disp(Ms);
     disp("successful!");
 end
 
